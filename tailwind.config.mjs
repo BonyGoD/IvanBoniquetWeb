@@ -4,13 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        "background-dark": "#0b0b0b",
-        primary: "#111111",
-        "card-dark": "#161616",
-        "accent-red": "#e11d48",
-        "muted-grey": "#9ca3af",
+        primary: "#1a1a1a",
+        "accent-red": "#e53e3e",
+        "background-light": "#f7f7f7",
+        "background-dark": "#191919",
+        "neutral-gray": "#a3a3a3",
+        "off-white": "#f5f5f5",
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"],
       },
     },
   },
   plugins: [],
-};
+}
