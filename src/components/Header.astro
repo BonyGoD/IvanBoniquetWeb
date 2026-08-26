@@ -1,10 +1,25 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Proyectos" },
+  { href: "/sobremi", label: "Sobre mi" },
+];
+---
+
 <header class="sticky top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md px-6 md:px-20 py-4">
   <nav class="max-w-7xl mx-auto flex items-center justify-center">
 
     <div class="hidden md:flex gap-10 text-sm">
-      <a class="hover:text-accent-red" href="/">Home</a>
-      <a class="text-muted-grey hover:text-accent-red" href="/projects">Proyectos</a>
-      <a class="text-muted-grey hover:text-accent-red" href="/sobremi">Sobre mi</a>
+      {links.map((link) => (
+        <a
+          class:list={["hover:text-accent-red", path !== link.href && "text-muted-grey"]}
+          href={link.href}
+        >
+          {link.label}
+        </a>
+      ))}
     </div>
   </nav>
 </header>

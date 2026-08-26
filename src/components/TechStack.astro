@@ -1,0 +1,48 @@
+---
+const stack = [
+  {
+    area: "Móvil",
+    items: ["Kotlin", "Kotlin Multiplatform", "Android", "Jetpack Compose", "Swift", "React Native", "Java"],
+  },
+  {
+    area: "Frontend",
+    items: ["React", "Next.js", "Vue", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind", "Figma"],
+  },
+  {
+    area: "Backend",
+    items: ["Node.js", "Express", "Java", "C#"],
+  },
+  {
+    area: "Datos",
+    items: ["Firebase", "MongoDB", "MySQL", "PostgreSQL", "Oracle", "SQLite"],
+  },
+  {
+    area: "Cloud & Tooling",
+    items: ["AWS", "Azure", "Vercel", "Jenkins", "Git", "Linux", "Postman"],
+  },
+];
+---
+
+<section class="mb-32">
+  <div class="flex items-center gap-2 mb-4">
+    <span class="h-px w-8 bg-accent-red"></span>
+    <span class="text-accent-red text-xs font-bold tracking-[0.2em] uppercase">
+      Stack
+    </span>
+  </div>
+
+  <h2 class="text-3xl font-bold mb-2 pb-6">Lenguajes y herramientas</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {stack.map((group) => (
+      <article class="bg-card-dark border border-white/5 rounded-xl p-6 hover:border-accent-red/50 transition">
+        <h3 class="text-xl font-bold mb-4">{group.area}</h3>
+        <div class="flex flex-wrap gap-2 text-xs">
+          {group.items.map((item) => (
+            <span class="bg-white/5 px-3 py-1 rounded">{item}</span>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

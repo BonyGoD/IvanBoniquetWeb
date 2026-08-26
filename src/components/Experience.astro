@@ -1,0 +1,89 @@
+---
+const clients = [
+  {
+    name: "Ecoembes",
+    role: "Tech Lead",
+    via: "NTTDATA / Everis",
+    detail:
+      "Equipo de Operaciones de Ecoembes, gestionando un equipo de 5 desarrolladores y como responsable mobile de Android e iOS en los proyectos AIRE y Basuraleza.",
+  },
+  {
+    name: "La Caixa",
+    role: "Tech Lead",
+    via: "NTTDATA / Everis",
+    detail:
+      "Equipo de 10 personas (3 Android, 3 iOS, 3 WEB y 1 QA) para el cliente La Caixa en el proyecto WIVAI.",
+  },
+  {
+    name: "DKV",
+    role: "Analista programador",
+    via: "NTTDATA / Everis",
+    detail: "Análisis y desarrollo en el proyecto Autorizaciones para el cliente DKV.",
+  },
+  {
+    name: "Cirsa",
+    role: "Desarrollador",
+    via: null,
+    detail:
+      "Desarrollo de evolutivos y resolución de incidencias en aplicaciones de gestión, garantizando la continuidad del servicio.",
+  },
+  {
+    name: "Planeta d'Agostini",
+    role: "Desarrollador",
+    via: null,
+    detail:
+      "Implementación del soporte multiidioma en las aplicaciones de Planeta DeAgostini, habilitando su despliegue en distintos mercados.",
+  },
+];
+---
+
+<section class="mb-32">
+  <div class="flex items-center gap-2 mb-4">
+    <span class="h-px w-8 bg-accent-red"></span>
+    <span class="text-accent-red text-xs font-bold tracking-[0.2em] uppercase">
+      Trayectoria
+    </span>
+  </div>
+
+  <h2 class="text-3xl font-bold mb-2 pb-6">Dónde he trabajado</h2>
+
+  <article class="bg-card-dark border border-accent-red/30 rounded-xl p-8 mb-6">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="status-dot h-2 w-2 rounded-full bg-accent-red"></span>
+      <span class="text-accent-red font-mono text-xs tracking-[0.2em] uppercase">
+        Actualmente
+      </span>
+    </div>
+
+    <h3 class="text-2xl font-bold mb-3">Inditex · Proyecto Shopper</h3>
+    <p class="text-muted-grey text-sm mb-6">
+      A través de NTTDATA, formando parte de un equipo de desarrolladores especializados
+      en Android con Jetpack Compose.
+    </p>
+
+    <div class="flex flex-wrap gap-2 text-xs">
+      <span class="bg-white/5 px-3 py-1 rounded">Android</span>
+      <span class="bg-white/5 px-3 py-1 rounded">Jetpack Compose</span>
+      <span class="bg-white/5 px-3 py-1 rounded">Kotlin</span>
+    </div>
+  </article>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {clients.map((client) => (
+      <article class="bg-card-dark border border-white/5 rounded-xl p-6 hover:border-accent-red/50 transition flex flex-col justify-between h-full">
+        <div>
+          <h3 class="text-xl font-bold mb-2">{client.name}</h3>
+          <p class="text-accent-red font-mono text-xs tracking-[0.2em] uppercase mb-4">
+            {client.role}
+          </p>
+          <p class="text-muted-grey text-sm mb-4">{client.detail}</p>
+        </div>
+        {client.via && (
+          <div class="flex gap-2 text-xs mt-6">
+            <span class="bg-white/5 px-3 py-1 rounded">vía {client.via}</span>
+          </div>
+        )}
+      </article>
+    ))}
+  </div>
+</section>
