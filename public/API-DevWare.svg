@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000" role="img" aria-label="API DevWare">
+  <defs>
+    <radialGradient id="glow" cx="76%" cy="14%" r="64%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.36"/>
+      <stop offset="55%" stop-color="#e11d48" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="1000" fill="#0b0b0b"/>
+  <rect width="1200" height="1000" fill="url(#grid)"/>
+  <rect width="1200" height="1000" fill="url(#glow)"/>
+
+  <g transform="translate(80 130)">
+    <rect x="0" y="-8" width="52" height="3" fill="#e11d48"/>
+    <text x="72" y="0" font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#e11d48">NODE.JS &#183; EXPRESS</text>
+  </g>
+
+  <g font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="600" fill="#9ca3af">
+    <rect x="80" y="186" width="168" height="60" rx="30" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="164" y="225" text-anchor="middle">Vercel</text>
+    <rect x="268" y="186" width="168" height="60" rx="30" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="352" y="225" text-anchor="middle">Resend</text>
+    <rect x="456" y="186" width="150" height="60" rx="30" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="531" y="225" text-anchor="middle">Alexa</text>
+  </g>
+
+  <g transform="translate(80 300)">
+    <rect width="1040" height="480" rx="24" fill="#111111" stroke="#ffffff" stroke-opacity="0.09"/>
+    <circle cx="46" cy="46" r="9" fill="#e11d48"/>
+    <circle cx="80" cy="46" r="9" fill="#ffffff" fill-opacity="0.16"/>
+    <circle cx="114" cy="46" r="9" fill="#ffffff" fill-opacity="0.16"/>
+    <line x1="0" y1="92" x2="1040" y2="92" stroke="#ffffff" stroke-opacity="0.07"/>
+
+    <g font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace" font-size="31">
+      <text x="46" y="168" fill="#4b5563">// apiDevWare.js</text>
+      <text x="46" y="232" fill="#d1d5db">app<tspan fill="#6b7280">.use(</tspan><tspan fill="#e11d48">'/'</tspan><tspan fill="#6b7280">,</tspan> <tspan fill="#9ca3af">createMailRouter</tspan><tspan fill="#6b7280">)</tspan></text>
+      <text x="46" y="296" fill="#d1d5db">app<tspan fill="#6b7280">.use(</tspan><tspan fill="#e11d48">'/fotos'</tspan><tspan fill="#6b7280">,</tspan> <tspan fill="#9ca3af">createFotosRouter</tspan><tspan fill="#6b7280">)</tspan></text>
+      <text x="46" y="360" fill="#d1d5db">app<tspan fill="#6b7280">.use(</tspan><tspan fill="#e11d48">'/alexa'</tspan><tspan fill="#6b7280">,</tspan> <tspan fill="#9ca3af">createAlexaRouter</tspan><tspan fill="#6b7280">)</tspan></text>
+      <text x="46" y="424" fill="#d1d5db">app<tspan fill="#6b7280">.use(</tspan><tspan fill="#e11d48">'/alexa/oauth'</tspan><tspan fill="#6b7280">,</tspan> <tspan fill="#9ca3af">createOAuthRouter</tspan><tspan fill="#6b7280">)</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,72 +1,77 @@
+---
+import StoreBadges from "./StoreBadges.astro";
+
+const projects = [
+  {
+    title: "ListaCompra",
+    image: "/Login-listacompra.png",
+    alt: "ListaCompra",
+    description: "Aplicacion Multiplataforma para gestionar tus listas de la compra.",
+    play: "https://play.google.com/store/apps/details?id=dev.bonygod.listacompra",
+    appStore: "https://apps.apple.com/es/app/id6758867523",
+  },
+  {
+    title: "DisApp",
+    image: "/Disapp-mobile.png",
+    alt: "DisApp",
+    description: "Aplicacion Android Jetpack Compose para gestion de presupuestos en Aluminis Disa.",
+  },
+  {
+    title: "GymRoutine",
+    image: "/GymRoutine.png",
+    alt: "GymRoutine",
+    description: "Aplicacion Multiplataforma para crear rutinas, registrar entrenamientos y seguir tu progreso en el gimnasio.",
+  },
+  {
+    title: "SignIn KMP",
+    image: "/SignIn-KMP.svg",
+    alt: "SignIn KMP",
+    description: "Librería Kotlin Multiplatform para integrar Google Sign-In y Apple Sign-In con Firebase en aplicaciones Kotlin Multiplatform.",
+  },
+  {
+    title: "Crashlytics KMP",
+    image: "/Crashlytics-KMP.svg",
+    alt: "Crashlytics KMP",
+    description: "Librería Kotlin Multiplatform para crash reporting sobre Firebase Crashlytics, con una única API común para Android e iOS.",
+  },
+  {
+    title: "API DevWare",
+    image: "/API-DevWare.svg",
+    alt: "API DevWare",
+    description: "API para envio de correos, gestion de imagenes y integracion de la app ListaCompra con Alexa.",
+  },
+  {
+    title: "Devware WEB",
+    image: "/DevwareWEB.png",
+    alt: "Devware WEB",
+    description: "Pagina WEB para consultoria tecnologica, especializada en desarrollo de software a medida.",
+  },
+];
+---
+
 <div class="bento-grid">
-    <div class="group relative overflow-hidden rounded-xl bg-primary border border-white/5 card-hover transition-all duration-500 md:col-span-2 md:row-span-2">
-    <div class="absolute inset-0 z-10 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-    <img
-      class="absolute inset-0 object-cover image-zoom transition-transform duration-700 opacity-60"
-      src="/Login-listacompra.png"
-      alt="ListaCompra"
-    />
-    <div class="absolute bottom-0 left-0 w-full p-8 z-20">
-      <h3 class="text-3xl font-bold mb-3">ListaCompra</h3>
-      <p class="text-muted-grey text-sm">
-        Aplicacion Multiplataforma para gestionar tus listas de la compra.
-      </p>
+  {projects.map((project, index) => (
+    <div
+      class:list={[
+        "group relative overflow-hidden rounded-xl bg-primary border border-white/5 card-hover transition-all duration-500 md:col-span-2 md:row-span-2",
+        index % 2 === 0 && index > 0 && "md:col-start-1",
+      ]}
+    >
+      <div class="absolute inset-0 z-10 bg-linear-to-t from-black via-black/40 to-transparent"></div>
+      <img
+        class="absolute inset-0 object-cover image-zoom transition-transform duration-700 opacity-60"
+        src={project.image}
+        alt={project.alt}
+      />
+      <div class="absolute bottom-0 left-0 w-full p-8 z-20">
+        <h3 class="text-3xl font-bold mb-3">{project.title}</h3>
+        <p class="text-muted-grey text-sm">{project.description}</p>
+        {(project.play || project.appStore) && (
+          <div class="mt-5">
+            <StoreBadges play={project.play} appStore={project.appStore} compact />
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-    <div class="group relative overflow-hidden rounded-xl bg-primary border border-white/5 card-hover transition-all duration-500 md:col-span-2 md:row-span-2">
-    <div class="absolute inset-0 z-10 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-    <img
-      class="absolute inset-0 object-cover image-zoom transition-transform duration-700 opacity-60"
-      src="/Disapp-mobile.png"
-      alt="DisApp"
-    />
-    <div class="absolute bottom-0 left-0 w-full p-8 z-20">
-      <h3 class="text-3xl font-bold mb-3">DisApp</h3>
-      <p class="text-muted-grey text-sm">
-        Aplicacion Android Jetpack Compose para gestion de presupuestos en Aluminis Disa.
-      </p>
-    </div>
-  </div>
-    <div class="group relative overflow-hidden rounded-xl bg-primary border border-white/5 card-hover transition-all duration-500 md:col-start-1 md:col-span-2 md:row-span-2">
-    <div class="absolute inset-0 z-10 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-    <img
-      class="absolute inset-0 object-cover image-zoom transition-transform duration-700 opacity-60 img-small"
-      src="/SignIn-Library(3).png"
-      alt="SignIn Library"
-    />
-    <div class="absolute bottom-0 left-0 w-full p-8 z-20">
-      <h3 class="text-3xl font-bold mb-3">SigIn KMP</h3>
-      <p class="text-muted-grey text-sm">
-        Librería Kotlin Multiplatform para integrar Google Sign-In y Apple Sign-In con Firebase en aplicaciones Kotlin Multiplatform.
-      </p>
-    </div>
-  </div>
-    <div class="group relative overflow-hidden rounded-xl bg-primary border border-white/5 card-hover transition-all duration-500 md:col-span-2 md:row-span-2">
-    <div class="absolute inset-0 z-10 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-    <img
-      class="absolute inset-0 object-cover image-zoom transition-transform duration-700 opacity-60"
-      src="/API.png"
-      alt="API"
-    />
-    <div class="absolute bottom-0 left-0 w-full p-8 z-20">
-      <h3 class="text-3xl font-bold mb-3">API DevWare</h3>
-      <p class="text-muted-grey text-sm">
-        API para envio de correos, gestion de imagenes y integracion de la app ListaCompra con Alexa.
-      </p>
-    </div>
-  </div>
-    <div class="group relative overflow-hidden rounded-xl bg-primary border border-white/5 card-hover transition-all duration-500 md:col-start-1 md:col-span-2 md:row-span-2">
-    <div class="absolute inset-0 z-10 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-    <img
-      class="absolute inset-0 object-cover image-zoom transition-transform duration-700 opacity-60"
-      src="/DevwareWEB.png"
-      alt="Devware WEB"
-    />
-    <div class="absolute bottom-0 left-0 w-full p-8 z-20">
-      <h3 class="text-3xl font-bold mb-3">Devware WEB</h3>
-      <p class="text-muted-grey text-sm">
-        Pagina WEB para consultoria tecnologica, especializada en desarrollo de software a medida.
-      </p>
-    </div>
-  </div>
+  ))}
 </div>

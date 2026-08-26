@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000" role="img" aria-label="SignIn KMP">
+  <defs>
+    <radialGradient id="glow" cx="76%" cy="14%" r="64%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.36"/>
+      <stop offset="55%" stop-color="#e11d48" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="1000" fill="#0b0b0b"/>
+  <rect width="1200" height="1000" fill="url(#grid)"/>
+  <rect width="1200" height="1000" fill="url(#glow)"/>
+
+  <g transform="translate(80 130)">
+    <rect x="0" y="-8" width="52" height="3" fill="#e11d48"/>
+    <text x="72" y="0" font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#e11d48">KOTLIN MULTIPLATFORM</text>
+  </g>
+
+  <g font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="600" fill="#9ca3af">
+    <rect x="80" y="186" width="186" height="60" rx="30" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="173" y="225" text-anchor="middle">Android</text>
+    <rect x="286" y="186" width="114" height="60" rx="30" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="343" y="225" text-anchor="middle">iOS</text>
+    <rect x="420" y="186" width="204" height="60" rx="30" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="522" y="225" text-anchor="middle">Firebase</text>
+  </g>
+
+  <g transform="translate(80 300)">
+    <rect width="1040" height="480" rx="24" fill="#111111" stroke="#ffffff" stroke-opacity="0.09"/>
+    <circle cx="46" cy="46" r="9" fill="#e11d48"/>
+    <circle cx="80" cy="46" r="9" fill="#ffffff" fill-opacity="0.16"/>
+    <circle cx="114" cy="46" r="9" fill="#ffffff" fill-opacity="0.16"/>
+    <line x1="0" y1="92" x2="1040" y2="92" stroke="#ffffff" stroke-opacity="0.07"/>
+
+    <g font-family="'JetBrains Mono','SF Mono',Menlo,Consolas,monospace" font-size="34">
+      <text x="46" y="172" fill="#4b5563">// commonMain</text>
+      <text x="46" y="238" fill="#e11d48">GoogleSignin<tspan fill="#6b7280">(</tspan></text>
+      <text x="100" y="300" fill="#d1d5db">text <tspan fill="#6b7280">=</tspan> <tspan fill="#9ca3af">"Login with Google"</tspan><tspan fill="#6b7280">,</tspan></text>
+      <text x="100" y="362" fill="#d1d5db">onSuccess <tspan fill="#6b7280">= { name, uid, email -&gt; }</tspan></text>
+      <text x="46" y="424" fill="#6b7280">)</text>
+    </g>
+  </g>
+</svg>
