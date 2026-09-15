@@ -1,38 +1,76 @@
 ---
-const clients = [
+const current = {
+  name: "Inditex · Proyecto Shopper",
+  role: "Senior Software Developer",
+  period: "abr. 2025 – actualidad",
+  via: "NTT DATA",
+  detail:
+    "Formando parte de un equipo de desarrollo especializado en Android para el cliente Inditex en el proyecto Shopper.",
+  tags: ["Android", "Kotlin", "Jetpack Compose"],
+};
+
+const jobs = [
   {
     name: "Ecoembes",
     role: "Tech Lead",
-    via: "NTTDATA / Everis",
+    period: "jul. 2024 – mar. 2025",
+    via: "NTT DATA",
     detail:
       "Equipo de Operaciones de Ecoembes, gestionando un equipo de 5 desarrolladores y como responsable mobile de Android e iOS en los proyectos AIRE y Basuraleza.",
+    tags: ["Kotlin", "Java"],
   },
   {
-    name: "La Caixa",
-    role: "Tech Lead",
-    via: "NTTDATA / Everis",
+    name: "La Caixa · WIVAI",
+    role: "Tech Lead Android & iOS",
+    period: "ago. 2021 – jun. 2024",
+    via: "NTT DATA",
     detail:
-      "Equipo de 10 personas (3 Android, 3 iOS, 3 WEB y 1 QA) para el cliente La Caixa en el proyecto WIVAI.",
+      "Liderando un equipo de 10 personas (3 Android, 3 iOS, 3 WEB y 1 QA) para el cliente La Caixa en el proyecto WIVAI.",
+    tags: ["Kotlin", "Java"],
+  },
+  {
+    name: "La Caixa · Negocios",
+    role: "Tech Lead Android & iOS",
+    period: "sept. 2019 – ago. 2021",
+    via: "Everis",
+    detail:
+      "Analista programador y líder responsable de un equipo de desarrollo Android e iOS para el cliente La Caixa en el proyecto Negocios.",
+    tags: ["Kotlin", "Java"],
   },
   {
     name: "DKV",
-    role: "Analista programador",
-    via: "NTTDATA / Everis",
+    role: "Analista programador .Net",
+    period: "dic. 2018 – sept. 2019",
+    via: "Everis",
     detail: "Análisis y desarrollo en el proyecto Autorizaciones para el cliente DKV.",
+    tags: [".NET Core 2", "C#"],
   },
   {
     name: "Cirsa",
-    role: "Desarrollador",
+    role: "Analista programador .Net",
+    period: "dic. 2016 – dic. 2018",
     via: null,
     detail:
       "Desarrollo de evolutivos y resolución de incidencias en aplicaciones de gestión, garantizando la continuidad del servicio.",
+    tags: ["C#", "ASP.NET Web API"],
   },
   {
-    name: "Planeta d'Agostini",
-    role: "Desarrollador",
+    name: "Planeta DeAgostini",
+    role: "Programador .Net",
+    period: "jun. 2016 – dic. 2016",
     via: null,
     detail:
       "Implementación del soporte multiidioma en las aplicaciones de Planeta DeAgostini, habilitando su despliegue en distintos mercados.",
+    tags: ["ASP.NET"],
+  },
+  {
+    name: "Edifici Gaia I+D",
+    role: "Programador C# WPF",
+    period: "ene. 2016 – may. 2016",
+    via: null,
+    detail:
+      "Desarrollo de una librería de comunicación por puerto serie y ModBus RTU para el control de un inversor eléctrico.",
+    tags: ["C#", "WPF"],
   },
 ];
 ---
@@ -55,34 +93,36 @@ const clients = [
       </span>
     </div>
 
-    <h3 class="text-2xl font-bold mb-3">Inditex · Proyecto Shopper</h3>
-    <p class="text-muted-grey text-sm mb-6">
-      A través de NTTDATA, formando parte de un equipo de desarrolladores especializados
-      en Android con Jetpack Compose.
-    </p>
+    <h3 class="text-2xl font-bold mb-2">{current.name}</h3>
+    <p class="text-white text-sm font-semibold mb-1">{current.role}</p>
+    <p class="text-muted-grey font-mono text-xs mb-4">{current.period}</p>
+    <p class="text-muted-grey text-sm mb-6">{current.detail}</p>
 
     <div class="flex flex-wrap gap-2 text-xs">
-      <span class="bg-white/5 px-3 py-1 rounded">Android</span>
-      <span class="bg-white/5 px-3 py-1 rounded">Jetpack Compose</span>
-      <span class="bg-white/5 px-3 py-1 rounded">Kotlin</span>
+      <span class="bg-white/5 px-3 py-1 rounded">vía {current.via}</span>
+      {current.tags.map((tag) => (
+        <span class="bg-white/5 px-3 py-1 rounded">{tag}</span>
+      ))}
     </div>
   </article>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {clients.map((client) => (
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {jobs.map((job) => (
       <article class="bg-card-dark border border-white/5 rounded-xl p-6 hover:border-accent-red/50 transition flex flex-col justify-between h-full">
         <div>
-          <h3 class="text-xl font-bold mb-2">{client.name}</h3>
-          <p class="text-accent-red font-mono text-xs tracking-[0.2em] uppercase mb-4">
-            {client.role}
+          <h3 class="text-xl font-bold mb-2">{job.name}</h3>
+          <p class="text-accent-red font-mono text-xs tracking-[0.2em] uppercase mb-1">
+            {job.role}
           </p>
-          <p class="text-muted-grey text-sm mb-4">{client.detail}</p>
+          <p class="text-muted-grey font-mono text-xs mb-4">{job.period}</p>
+          <p class="text-muted-grey text-sm mb-4">{job.detail}</p>
         </div>
-        {client.via && (
-          <div class="flex gap-2 text-xs mt-6">
-            <span class="bg-white/5 px-3 py-1 rounded">vía {client.via}</span>
-          </div>
-        )}
+        <div class="flex flex-wrap gap-2 text-xs mt-6">
+          {job.via && <span class="bg-white/5 px-3 py-1 rounded">vía {job.via}</span>}
+          {job.tags.map((tag) => (
+            <span class="bg-white/5 px-3 py-1 rounded">{tag}</span>
+          ))}
+        </div>
       </article>
     ))}
   </div>

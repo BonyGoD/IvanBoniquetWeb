@@ -1,5 +1,6 @@
 ---
 import StoreBadges from "./StoreBadges.astro";
+import StatsBanner from "./StatsBanner.astro";
 
 const PLAY = "https://play.google.com/store/apps/details?id=dev.bonygod.listacompra";
 const APP_STORE = "https://apps.apple.com/es/app/id6758867523";
@@ -23,9 +24,9 @@ const APP_STORE = "https://apps.apple.com/es/app/id6758867523";
     Ivan Boniquet
   </h1>
 
-  <p class="max-w-2xl text-gray-400 text-lg mb-10">
-    Especializado en <span class="text-white">Android</span>, <span class="text-white">KMP</span> y tecnologías <span class="text-white">WEB</span> modernas.
-  </p>
+  <div class="w-full flex justify-center text-left px-6 mb-10">
+    <StatsBanner years={10} projects={17} apps={2} />
+  </div>
 
   <div class="flex gap-4">
     <a href="/projects" class="bg-black border border-white/10 px-8 py-4 rounded-xl font-bold hover:bg-accent-red transition hover:cursor-pointer block">

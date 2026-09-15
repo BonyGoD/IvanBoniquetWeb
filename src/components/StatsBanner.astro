@@ -1,0 +1,63 @@
+---
+// src/components/StatsBanner.astro
+// Sustituye la línea "Especializado en Android, KMP y tecnologías WEB modernas." del hero.
+interface Props {
+  years?: number;
+  projects?: number;
+  sectors?: number;
+  apps?: number;
+}
+
+const { years = 5, projects = 24, sectors = 6, apps = 4 } = Astro.props;
+
+const stats = [
+  { value: years, suffix: "+", label: "Años de experiencia" },
+  { value: projects, suffix: "", label: "Proyectos finalizados" },
+  { value: sectors, suffix: "", label: "Sectores de negocio" },
+  { value: apps, suffix: "", label: "Apps publicadas" },
+];
+---
+
+<div class="w-full max-w-[1120px] rounded-[20px] border border-white/[0.07] bg-card-dark px-8 py-7 hover:border-accent-red/50 transition">
+  <div class="flex items-center gap-2.5">
+    <span class="status-dot h-2 w-2 rounded-full bg-accent-red"></span>
+    <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-grey">
+      Android · KMP · Web
+    </span>
+  </div>
+
+  <div class="mt-[22px] grid grid-cols-2 gap-6 lg:grid-cols-4">
+    {
+      stats.map((s) => (
+        <div class="flex flex-col items-center gap-1.5 text-center">
+          <div class="flex items-baseline justify-center gap-0.5">
+            <span class="text-[44px] font-extrabold leading-none tracking-[-0.03em] text-white">
+              {s.value}
+            </span>
+            {s.suffix && (
+              <span class="text-2xl font-bold leading-none text-accent-red">{s.suffix}</span>
+            )}
+          </div>
+          <span class="text-[13px] font-medium leading-[1.35] text-muted-grey">{s.label}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .status-dot {
+    animation: pulseDot 2.4s ease-in-out infinite;
+  }
+  @keyframes pulseDot {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.6);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 0 6px rgba(225, 29, 72, 0);
+    }
+  }
+</style>
